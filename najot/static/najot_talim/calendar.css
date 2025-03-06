@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #1e3c72, #2a5298);
+    color: white;
+    margin: 0;
+}
+
+.calendar-container {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0px 15px 40px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+}
+
+.calendar-container:hover {
+    transform: scale(1.05);
+}
+
+h2 {
+    margin-bottom: 15px;
+    color: #ffcc00;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+#calendar {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #ffcc00;
+    border-radius: 8px;
+    font-size: 16px;
+    text-align: center;
+    cursor: pointer;
+    background: #444;
+    color: white;
+    outline: none;
+}
+
+.flatpickr-calendar {
+    background: #333 !important;
+    color: white !important;
+    border-radius: 15px !important;
+    box-shadow: 0px 15px 35px rgba(0, 0, 0, 0.5);
+}
+
+.flatpickr-day {
+    border-radius: 50% !important;
+    transition: all 0.3s ease-in-out;
+    font-weight: bold;
+    font-size: 14px;
+    color: white !important;
+}
+
+.flatpickr-day:hover {
+    background: #ffcc00 !important;
+    color: black !important;
+    transform: scale(1.2);
+}
+
+.flatpickr-day.selected {
+    background: #ffaa00 !important;
+    color: black !important;
+    box-shadow: 0px 5px 15px rgba(255, 170, 0, 0.5);
+}
+
+.flatpickr-day.disabled {
+    color: #777 !important;
+    background: #444 !important;
+    opacity: 0.5;
+}
+
+.flatpickr-day.disabled:hover {
+    transform: none;
+}
+
+.flatpickr-day.otherMonth {
+    opacity: 0.3 !important;
+    color: #888 !important;
+}
+
+.flatpickr-day.past-dars {
+    background: #00c853 !important;
+    color: white !important;
+    font-weight: bold;
+    border-radius: 50%;
+}
+
+.flatpickr-day.future-dars {
+    border: 2px solid #00c853 !important;
+    color: white !important;
+    font-weight: bold;
+    background: transparent !important;
+}
+
+.back-button {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background-color: #3498db;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.back-button:hover {
+    background-color: #2980b9;
+}

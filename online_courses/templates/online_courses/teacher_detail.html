@@ -1,0 +1,42 @@
+{% extends 'online_courses/base/base.html' %}
+
+{% block teacher_content %}
+<div class="max-w-4xl mx-auto bg-white shadow-lg rounded-xl overflow-hidden mt-10 p-6 flex flex-col items-center">
+    <!-- Rasm -->
+    <div class="relative">
+        <img src="{{ teacher.photo.url }}" alt="{{ teacher.name }}" class="w-44 h-44 rounded-full border-4 border-blue-500 shadow-md">
+        <span class="absolute bottom-2 right-2 bg-green-500 w-5 h-5 rounded-full border-2 border-white"></span>
+    </div>
+
+    <!-- Ism va Kasb -->
+    <h2 class="text-3xl font-semibold mt-4 text-gray-800">{{ teacher.name }}</h2>
+    <p class="text-lg text-gray-600 italic">{{ teacher.specialty }}</p>
+
+    <!-- Ijtimoiy tarmoqlar -->
+    <div class="flex space-x-4 mt-4">
+        {% if teacher.twitter %}
+        <a href="{{ teacher.twitter }}" target="_blank" class="text-blue-400 hover:text-blue-500 text-3xl">
+            <i class="fab fa-twitter"></i>
+        </a>
+        {% endif %}
+        {% if teacher.facebook %}
+        <a href="{{ teacher.facebook }}" target="_blank" class="text-blue-700 hover:text-blue-800 text-3xl">
+            <i class="fab fa-facebook"></i>
+        </a>
+        {% endif %}
+        {% if teacher.linkedin %}
+        <a href="{{ teacher.linkedin }}" target="_blank" class="text-blue-600 hover:text-blue-700 text-3xl">
+            <i class="fab fa-linkedin"></i>
+        </a>
+        {% endif %}
+    </div>
+
+    <!-- Kurslar yoki qo'shimcha ma'lumot -->
+    <div class="mt-6 w-full text-center">
+        <a href="{% url 'online_courses:course_detail' teacher.id %}" 
+           class="bg-blue-500 hover:bg-blue-600 text-white px-6 py-2 rounded-full shadow-md transition">
+            Kurslarini Ko'rish
+        </a>
+    </div>
+</div>
+{% endblock %}

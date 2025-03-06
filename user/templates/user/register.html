@@ -1,0 +1,54 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="{% static 'user/style.css' %}">
+</head>
+<body>
+<div class="container">
+    <!-- LEFT SECTION -->
+    <div class="left-section">
+        <div class="overlay">
+            <h1 class="title">Welcome to Online Cources</h1>
+            <p class="subtitle">Learn, Explore, and Elevate Your Skills.</p>
+
+            <div class="btn-group">
+                <a href="#" class="btn-primary">Get Started</a>
+                <a href="{% url 'online_courses:index' %}" class="btn-secondary">Explore Courses</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- RIGHT SECTION (LOGIN FORM) -->
+    <div class="wrapper">
+        <h2>Register</h2>
+        <form action="#" method="POST">
+            {% csrf_token %}
+            <div class="input-group">
+                <input type="text" name="username" required placeholder=" ">
+                <label>Username</label>
+            </div>
+            <div class="input-group">
+                <input type="email" name="email" required placeholder=" ">
+                <label>Email Address</label>
+            </div>
+            <div class="input-group">
+                <input type="password" name="password1" required placeholder=" ">
+                <label>Password</label>
+            </div>
+            <div class="input-group">
+                <input type="password" name="password2" required placeholder=" ">
+                <label>Confirm Password</label>
+            </div>
+            <button type="submit">Register</button>
+            <p>Already have an account? <a href="{% url 'user:login_page' %}">Login</a></p>
+        </form>
+    </div>
+</div>
+
+
+</body>
+</html>

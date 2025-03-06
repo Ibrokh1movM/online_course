@@ -1,0 +1,81 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="{% static 'user/style.css' %}">
+</head>
+<body>
+
+<div class="container">
+    <!-- LEFT SECTION -->
+    <div class="left-section">
+        <div class="overlay">
+            <h1 class="title">Welcome to Online Cources</h1>
+            <p class="subtitle">Learn, Explore, and Elevate Your Skills.</p>
+
+            <div class="btn-group">
+                <a href="#" class="btn-primary">Get Started</a>
+                <a href="{% url 'online_courses:index' %}" class="btn-secondary">Explore Courses</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- RIGHT SECTION (LOGIN FORM) -->
+    <div class="right-section">
+        <div class="wrapper">
+            <h2>Login</h2>
+            {% for message in messages %}
+                {% if 'error' in message.tags %}
+                    <li style="color: red">{{ message }}</li>
+                {% elif 'success' in message.tags %}
+                    <li style="color: green">{{ message }}</li>
+                {% endif %}
+
+            {% endfor %}
+            {% if form.errors %}
+                {% for field in form %}
+                    {% for error in field.errors %}
+                        <div class="alert alert-danger">
+                            <strong>{{ error|escape }}</strong>
+                        </div>
+                    {% endfor %}
+                {% endfor %}
+                {% for error in form.non_field_errors %}
+                    <div class="alert alert-danger">
+                        <strong>{{ error|escape }}</strong>
+                    </div>
+                {% endfor %}
+            {% endif %}
+            <form action="{% url 'user:login_page' %}" method="post">
+                {% csrf_token %}
+                <div class="input-group">
+                    <input type="text" name="email" required placeholder="Email">
+                    <label>Email</label>
+                </div>
+                <div class="input-group">
+                    <input type="password" name="password" required placeholder=" ">
+                    <label>Password</label>
+                </div>
+                <div class="checkbox-group">
+                    <label><input type="checkbox" name="remember"> Remember me</label>
+                    <a href="{% url 'user:forgot_password' %}">Forgot Password?</a>
+                </div>
+                <button type="submit">Login</button>
+                <p>Don't have an account? <a href="{% url 'user:register_page' %}">Register</a></p>
+            </form>
+            <div class="col-sm-6">
+                <a class="btn btn-outline-google-plus btn-sm d-block w-100"
+                   href="{% url 'social:begin' 'google-oauth2' %}">
+                    <span class="fab fa-google-plus-g me-2" data-fa-transform="grow-8"></span>
+                    Google
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,319 @@
+/* Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Gradient Background */
+body {
+    background: linear-gradient(135deg, #0F2027, #203A43, #2C5364);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Centered Box */
+.wrapper {
+    width: 100%;
+    max-width: 400px;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(10px);
+    text-align: center;
+    animation: fadeIn 0.8s ease-in-out;
+}
+
+/* Animatsiya */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Title */
+.wrapper h2 {
+    color: #fff;
+    font-size: 26px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+/* Input Fields */
+.input-group {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 14px;
+    border: 2px solid transparent;
+    border-radius: 8px;
+    outline: none;
+    background: rgba(255, 255, 255, 0.15);
+    color: #fff;
+    font-size: 16px;
+    transition: 0.3s ease-in-out;
+}
+
+.input-group input:focus {
+    border-color: #00D4FF;
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.input-group label {
+    position: absolute;
+    left: 14px;
+    top: 16px;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+/* Inputga yozganda label ko‘tariladi */
+.input-group input:focus + label,
+.input-group input:not(:placeholder-shown) + label {
+    top: -8px;
+    left: 12px;
+    font-size: 12px;
+    color: #00D4FF;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 2px 6px;
+    border-radius: 4px;
+}
+
+/* Primary Button */
+button {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 8px;
+    background: linear-gradient(90deg, #00D4FF, #0072FF);
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+button:hover {
+    background: linear-gradient(90deg, #0072FF, #00D4FF);
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(0, 212, 255, 0.4);
+}
+
+/* Links */
+.link-group {
+    margin-top: 15px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.link-group a {
+    color: #00D4FF;
+    text-decoration: none;
+    font-size: 14px;
+    transition: 0.3s;
+    padding: 10px 15px;
+    border-radius: 6px;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.link-group a:hover {
+    background: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    box-shadow: 0 3px 10px rgba(0, 212, 255, 0.3);
+}
+
+/* Checkbox Group */
+.checkbox-group {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+/* Checkbox Styling */
+.checkbox-group label {
+    color: white;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    gap: 8px;
+}
+
+/* Checkboxning o‘zini yashirib, custom ko‘rinish beramiz */
+.checkbox-group input[type="checkbox"] {
+    appearance: none;
+    width: 16px;
+    height: 16px;
+    border: 2px solid #00D4FF;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+    position: relative;
+}
+
+/* Belgilanganda checkbox fon rangi o‘zgaradi */
+.checkbox-group input[type="checkbox"]:checked {
+    background: #00D4FF;
+    border-color: #00D4FF;
+}
+
+/* Check belgisi */
+.checkbox-group input[type="checkbox"]::before {
+    content: '✔';
+    font-size: 12px;
+    color: white;
+    position: absolute;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+/* Checkbox belgilansa, "✔" chiqadi */
+.checkbox-group input[type="checkbox"]:checked::before {
+    opacity: 1;
+}
+
+/* Forgot Password link */
+.checkbox-group a {
+    font-size: 14px;
+    color: #00D4FF;
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+    font-weight: 500;
+    padding: 5px 10px;
+    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* Hover effekti */
+.checkbox-group a:hover {
+    color: white;
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0px 0px 8px rgba(0, 212, 255, 0.4);
+}
+
+/* Register linkining joylashuvi */
+.wrapper p {
+    text-align: center;
+    margin-top: 15px;
+    font-size: 14px;
+    color: white;
+}
+
+.wrapper p a {
+    color: #00D4FF;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease-in-out;
+}
+
+/* Hover effekti */
+.wrapper p a:hover {
+    color: white;
+    text-decoration: underline;
+}
+
+
+/* Overlay (shaffof effekt) */
+.overlay {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 40px;
+    border-radius: 20px;
+    backdrop-filter: blur(8px);
+    max-width: 500px;
+    text-align: center;
+}
+
+/* Sarlavha */
+.title {
+    font-size: 42px;
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+/* Taglavha */
+.subtitle {
+    font-size: 18px;
+    color: white;
+    opacity: 0.9;
+    margin-bottom: 20px;
+}
+
+/* Tugmalar */
+.btn-group {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+}
+
+.btn-primary,
+.btn-secondary {
+    text-decoration: none;
+    padding: 12px 24px;
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn-primary {
+    background: #fff;
+    color: #8b48ff;
+}
+
+.btn-secondary {
+    background: transparent;
+    color: white;
+    border: 2px solid white;
+}
+
+.btn-primary:hover {
+    background: #ff89c1;
+    color: white;
+}
+
+.btn-secondary:hover {
+    background: white;
+    color: #8b48ff;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 50px; /* Orasidagi masofani oshiramiz */
+    padding: 0 10%;
+}
+
+.welcome-section {
+    margin-right: 50px; /* Orasiga masofa qo‘shish */
+}
+
+.login-container {
+    margin-left: 50px;
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        gap: 30px; /* Telefon ekranda ham masofa saqlansin */
+    }
+}
+
