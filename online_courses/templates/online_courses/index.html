@@ -18,6 +18,11 @@
                          style="min-height: 300px; object-fit: cover;">
                     <div class="carousel-caption d-flex align-items-center justify-content-center">
                         <div class="p-5" style="width: 100%; max-width: 900px;">
+                            {% if success_message %}
+                                <div class="alert alert-success text-center" role="alert">
+                                    {{ success_message }}
+                                </div>
+                            {% endif %}
                             <h5 class="text-white text-uppercase mb-md-3">Best Online Courses</h5>
                             <h1 class="display-3 text-white mb-md-4">Best Education From Your Home</h1>
                             <a href="" class="btn btn-primary py-md-2 px-md-4 font-weight-semi-bold mt-2">Learn More</a>
@@ -53,27 +58,26 @@
 
 
     <!-- About Start -->
-    <div class="container-fluid py-5">
+    <div class="container-fluid py-5 bg-light">
         <div class="container py-5">
             <div class="row align-items-center">
-                <div class="col-lg-5">
-                    <img class="img-fluid rounded mb-4 mb-lg-0" src="{% static 'online_courses/img/about.jpg' %}"
-                         alt="">
+                <div class="col-lg-6">
+                    <h5 class="text-success text-uppercase mb-3" style="letter-spacing: 3px;">About Us</h5>
+                    <h1 class="font-weight-bold">Najot Ta'lim - Innovative Learning Platform</h1>
+                    <p class="text-muted mt-4">
+                        Learn modern professions in a short time! In our courses, you will work on real projects,
+                        receive hands-on training from experienced mentors, and gain the skills needed to reach a
+                        professional level in your field.
+                    </p>
+                    <p class="text-muted">
+                        Our learning process is developed by industry experts and delivered through interactive
+                        and practical lessons.
+                    </p>
+                    <a href="#" class="btn btn-success py-2 px-4 font-weight-bold mt-3 shadow-sm">Learn More</a>
                 </div>
-                <div class="col-lg-7">
-                    <div class="text-left mb-4">
-                        <h5 class="text-primary text-uppercase mb-3" style="letter-spacing: 5px;">About Us</h5>
-                        <h1>Innovative Way To Learn</h1>
-                    </div>
-                    <p>Aliquyam accusam clita nonumy ipsum sit sea clita ipsum clita, ipsum dolores amet voluptua duo
-                        dolores et sit ipsum rebum, sadipscing et erat eirmod diam kasd labore clita est. Diam sanctus
-                        gubergren sit rebum clita amet, sea est sea vero sed et. Sadipscing labore tempor at sit dolor
-                        clita
-                        consetetur diam. Diam ut diam tempor no et, lorem dolore invidunt no nonumy stet ea labore,
-                        dolor
-                        justo et sit gubergren diam sed sed no ipsum. Sit tempor ut nonumy elitr dolores justo aliquyam
-                        ipsum stet</p>
-                    <a href="" class="btn btn-primary py-md-2 px-md-4 font-weight-semi-bold mt-2">Learn More</a>
+                <div class="col-lg-6 text-center">
+                    <img class="img-fluid rounded shadow-lg w-100"
+                         src="{% static 'online_courses/img/najot_about.jpg' %}" alt="Najot Ta'lim">
                 </div>
             </div>
         </div>
@@ -89,77 +93,18 @@
                 <h1>Explore Top Subjects</h1>
             </div>
             <div class="row">
-                <div class="col-lg-3 col-md-6 mb-4">
-                    <div class="cat-item position-relative overflow-hidden rounded mb-2">
-                        <img class="img-fluid" src="{% static 'online_courses/img/cat-1.jpg' %}" alt="">
-                        <a class="cat-overlay text-white text-decoration-none" href="">
-                            <h4 class="text-white font-weight-medium">Web Design</h4>
-                            <span>100 Courses</span>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 mb-4">
-                    <div class="cat-item position-relative overflow-hidden rounded mb-2">
-                        <img class="img-fluid" src="{% static 'online_courses/img/cat-2.jpg' %}" alt="">
-                        <a class="cat-overlay text-white text-decoration-none" href="">
-                            <h4 class="text-white font-weight-medium">Development</h4>
-                            <span>100 Courses</span>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 mb-4">
-                    <div class="cat-item position-relative overflow-hidden rounded mb-2">
-                        <img class="img-fluid" src="{% static 'online_courses/img/cat-3.jpg' %}" alt="">
-                        <a class="cat-overlay text-white text-decoration-none" href="">
-                            <h4 class="text-white font-weight-medium">Game Design</h4>
-                            <span>100 Courses</span>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 mb-4">
-                    <div class="cat-item position-relative overflow-hidden rounded mb-2">
-                        <img class="img-fluid" src="{% static 'online_courses/img/cat-4.jpg' %}" alt="">
-                        <a class="cat-overlay text-white text-decoration-none" href="">
-                            <h4 class="text-white font-weight-medium">Apps Design</h4>
-                            <span>100 Courses</span>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 mb-4">
-                    <div class="cat-item position-relative overflow-hidden rounded mb-2">
-                        <img class="img-fluid" src="{% static 'online_courses/img/cat-5.jpg' %}" alt="">
-                        <a class="cat-overlay text-white text-decoration-none" href="">
-                            <h4 class="text-white font-weight-medium">Marketing</h4>
-                            <span>100 Courses</span>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 mb-4">
-                    <div class="cat-item position-relative overflow-hidden rounded mb-2">
-                        <img class="img-fluid" src="{% static 'online_courses/img/cat-6.jpg' %}" alt="">
-                        <a class="cat-overlay text-white text-decoration-none" href="">
-                            <h4 class="text-white font-weight-medium">Research</h4>
-                            <span>100 Courses</span>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 mb-4">
-                    <div class="cat-item position-relative overflow-hidden rounded mb-2">
-                        <img class="img-fluid" src="{% static 'online_courses/img/cat-7.jpg' %}" alt="">
-                        <a class="cat-overlay text-white text-decoration-none" href="">
-                            <h4 class="text-white font-weight-medium">Content Writing</h4>
-                            <span>100 Courses</span>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 mb-4">
-                    <div class="cat-item position-relative overflow-hidden rounded mb-2">
-                        <img class="img-fluid" src="{% static 'online_courses/img/cat-8.jpg' %}" alt="">
-                        <a class="cat-overlay text-white text-decoration-none" href="">
-                            <h4 class="text-white font-weight-medium">SEO</h4>
-                            <span>100 Courses</span>
-                        </a>
-                    </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 px-6">
+                    {% for course in courses %}
+                        <div class="relative rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300">
+                            <img class="w-full h-48 object-cover" src="{{ course.get_absolute_url }}"
+                                 alt="{{ course.title }}">
+                            <a href="{% url 'online_courses:course_detail' course.id %}"
+                               class="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-center items-center text-white text-center px-4 transition duration-300 hover:bg-opacity-70">
+                                <h4 class="text-lg text-white font-semibold drop-shadow-lg">{{ course.title }}</h4>
+                                <span class="text-sm text-white">{{ course.lessons_count }} Courses</span>
+                            </a>
+                        </div>
+                    {% endfor %}
                 </div>
             </div>
         </div>
@@ -175,120 +120,29 @@
                 <h1>Our Popular Courses</h1>
             </div>
             <div class="row">
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="rounded overflow-hidden mb-2">
-                        <img class="img-fluid" src="{% static 'online_courses/img/course-1.jpg' %}" alt="">
-                        <div class="bg-secondary p-4">
-                            <div class="d-flex justify-content-between mb-3">
-                                <small class="m-0"><i class="fa fa-users text-primary mr-2"></i>25 Students</small>
-                                <small class="m-0"><i class="far fa-clock text-primary mr-2"></i>01h 30m</small>
-                            </div>
-                            <a class="h5" href="">Web design & development courses for beginner</a>
-                            <div class="border-top mt-4 pt-4">
-                                <div class="d-flex justify-content-between">
-                                    <h6 class="m-0"><i class="fa fa-star text-primary mr-2"></i>4.5 <small>(250)</small>
-                                    </h6>
-                                    <h5 class="m-0">$99</h5>
+                {% for course in courses %}
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="rounded overflow-hidden mb-2">
+                            <img class="img-fluid" src="{{ course.get_absolute_url }}" alt="">
+                            <div class="bg-secondary p-4">
+                                <div class="d-flex justify-content-between mb-3">
+                                    <small class="m-0"><i class="fa fa-users text-primary mr-2"></i>14 Students</small>
+                                    <small class="m-0"><i class="far fa-clock text-primary mr-2"></i>02h 00m</small>
+                                </div>
+                                <a class="h5"
+                                   href="{% url 'online_courses:course_detail' course.id %}">{{ course.title }}</a>
+                                <div class="border-top mt-4 pt-4">
+                                    <div class="d-flex justify-content-between">
+                                        <h6 class="m-0"><i class="fa fa-star text-primary mr-2"></i>4.5
+                                            <small>(250)</small>
+                                        </h6>
+                                        <h5 class="m-0">${{ course.price }}</h5>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="rounded overflow-hidden mb-2">
-                        <img class="img-fluid" src="{% static 'online_courses/img/course-2.jpg' %}" alt="">
-                        <div class="bg-secondary p-4">
-                            <div class="d-flex justify-content-between mb-3">
-                                <small class="m-0"><i class="fa fa-users text-primary mr-2"></i>25 Students</small>
-                                <small class="m-0"><i class="far fa-clock text-primary mr-2"></i>01h 30m</small>
-                            </div>
-                            <a class="h5" href="">Web design & development courses for beginner</a>
-                            <div class="border-top mt-4 pt-4">
-                                <div class="d-flex justify-content-between">
-                                    <h6 class="m-0"><i class="fa fa-star text-primary mr-2"></i>4.5 <small>(250)</small>
-                                    </h6>
-                                    <h5 class="m-0">$99</h5>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="rounded overflow-hidden mb-2">
-                        <img class="img-fluid" src="{% static 'online_courses/img/course-3.jpg' %}" alt="">
-                        <div class="bg-secondary p-4">
-                            <div class="d-flex justify-content-between mb-3">
-                                <small class="m-0"><i class="fa fa-users text-primary mr-2"></i>25 Students</small>
-                                <small class="m-0"><i class="far fa-clock text-primary mr-2"></i>01h 30m</small>
-                            </div>
-                            <a class="h5" href="">Web design & development courses for beginner</a>
-                            <div class="border-top mt-4 pt-4">
-                                <div class="d-flex justify-content-between">
-                                    <h6 class="m-0"><i class="fa fa-star text-primary mr-2"></i>4.5 <small>(250)</small>
-                                    </h6>
-                                    <h5 class="m-0">$99</h5>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="rounded overflow-hidden mb-2">
-                        <img class="img-fluid" src="{% static 'online_courses/img/course-4.jpg' %}" alt="">
-                        <div class="bg-secondary p-4">
-                            <div class="d-flex justify-content-between mb-3">
-                                <small class="m-0"><i class="fa fa-users text-primary mr-2"></i>25 Students</small>
-                                <small class="m-0"><i class="far fa-clock text-primary mr-2"></i>01h 30m</small>
-                            </div>
-                            <a class="h5" href="">Web design & development courses for beginner</a>
-                            <div class="border-top mt-4 pt-4">
-                                <div class="d-flex justify-content-between">
-                                    <h6 class="m-0"><i class="fa fa-star text-primary mr-2"></i>4.5 <small>(250)</small>
-                                    </h6>
-                                    <h5 class="m-0">$99</h5>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="rounded overflow-hidden mb-2">
-                        <img class="img-fluid" src="{% static 'online_courses/img/course-5.jpg' %}" alt="">
-                        <div class="bg-secondary p-4">
-                            <div class="d-flex justify-content-between mb-3">
-                                <small class="m-0"><i class="fa fa-users text-primary mr-2"></i>25 Students</small>
-                                <small class="m-0"><i class="far fa-clock text-primary mr-2"></i>01h 30m</small>
-                            </div>
-                            <a class="h5" href="">Web design & development courses for beginner</a>
-                            <div class="border-top mt-4 pt-4">
-                                <div class="d-flex justify-content-between">
-                                    <h6 class="m-0"><i class="fa fa-star text-primary mr-2"></i>4.5 <small>(250)</small>
-                                    </h6>
-                                    <h5 class="m-0">$99</h5>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="rounded overflow-hidden mb-2">
-                        <img class="img-fluid" src="{% static 'online_courses/img/course-6.jpg' %}" alt="">
-                        <div class="bg-secondary p-4">
-                            <div class="d-flex justify-content-between mb-3">
-                                <small class="m-0"><i class="fa fa-users text-primary mr-2"></i>25 Students</small>
-                                <small class="m-0"><i class="far fa-clock text-primary mr-2"></i>01h 30m</small>
-                            </div>
-                            <a class="h5" href="">Web design & development courses for beginner</a>
-                            <div class="border-top mt-4 pt-4">
-                                <div class="d-flex justify-content-between">
-                                    <h6 class="m-0"><i class="fa fa-star text-primary mr-2"></i>4.5 <small>(250)</small>
-                                    </h6>
-                                    <h5 class="m-0">$99</h5>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                {% endfor %}
             </div>
         </div>
     </div>
@@ -323,25 +177,27 @@
                             <h1 class="m-0">Sign Up Now</h1>
                         </div>
                         <div class="card-body rounded-bottom bg-primary p-5">
-                            <form>
+                            <form method="POST" action="{% url 'online_courses:register' %}">
+                                {% csrf_token %}
                                 <div class="form-group">
-                                    <input type="text" class="form-control border-0 p-4" placeholder="Your name"
-                                           required="required"/>
+                                    <input type="text" name="name" class="form-control border-0 p-3"
+                                           placeholder="Your name" required>
                                 </div>
                                 <div class="form-group">
-                                    <input type="email" class="form-control border-0 p-4" placeholder="Your email"
-                                           required="required"/>
+                                    <input type="email" name="email" class="form-control border-0 p-3"
+                                           placeholder="Your email" required>
                                 </div>
                                 <div class="form-group">
-                                    <select class="custom-select border-0 px-4" style="height: 47px;">
+                                    <select name="course" class="custom-select border-0 px-4" style="height: 47px;">
                                         <option selected>Select a course</option>
-                                        <option value="1">Course 1</option>
-                                        <option value="2">Course 1</option>
-                                        <option value="3">Course 1</option>
+                                        {% for course in courses %}
+                                            <option value="{{ course.id }}">{{ course.title }}</option>
+                                        {% endfor %}
                                     </select>
                                 </div>
-                                <div>
-                                    <button class="btn btn-dark btn-block border-0 py-3" type="submit">Sign Up Now
+                                <div class="mt-4">
+                                    <button class="btn btn-dark btn-block border-0 py-3 w-100" type="submit">Sign Up
+                                        Now
                                     </button>
                                 </div>
                             </form>
@@ -540,7 +396,7 @@
     </div>
     <!-- Blog End -->
 
-    
+
 
 
     <!-- Back to Top -->

@@ -13,7 +13,7 @@ from django.core.mail import EmailMessage
 
 
 User = get_user_model()
-# Create your views here.
+
 
 def login_page(request):
     form = LoginForm()
@@ -35,6 +35,17 @@ def login_page(request):
     }
     return render(request, 'user/login.html', context=context)
 
+
+from django.shortcuts import render
+from django.contrib.sites.shortcuts import get_current_site
+from django.utils.http import urlsafe_base64_encode
+from django.utils.encoding import force_bytes
+from django.core.mail import EmailMessage
+from django.template.loader import render_to_string
+from user.custom_token import account_activation_token
+from .forms import RegisterForm
+
+
 def register_page(request):
     if request.method == "POST":
         form = RegisterForm(request.POST)
@@ -53,18 +64,20 @@ def register_page(request):
                 'uid': urlsafe_base64_encode(force_bytes(user.pk)),
                 'token': account_activation_token.make_token(user),
             })
-            # verification_code = get_random_string(6, '0123456789')  # 6 xonali kod
-            # request.session['verification_code'] = verification_code  # Sessiyada saqlash
-            # request.session['email'] = user.email
+
             email_message = EmailMessage(subject, message, to=[email])
             email_message.content_subtype = 'html'
             email_message.send()
-            return render(request, 'user/email-verification/verify_email_done.html',{'email': user.email})
 
-        return render(request, 'user/register.html', {'form': form})
+            return render(request, 'user/email-verification/verify_email_done.html', {'email': user.email})
+
+        else:
+            print("Formda xatoliklar mavjud:", form.errors)
+            return render(request, 'user/register.html', {'form': form})
 
     form = RegisterForm()
     return render(request, 'user/register.html', {'form': form})
+
 
 def verify_email_confirm(request, uidb64, token):
     try:

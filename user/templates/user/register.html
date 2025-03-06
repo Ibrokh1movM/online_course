@@ -25,14 +25,24 @@
     <!-- RIGHT SECTION (LOGIN FORM) -->
     <div class="wrapper">
         <h2>Register</h2>
-        <form action="#" method="POST">
+        <form action="{% url 'user:register_page' %}" method="POST">
             {% csrf_token %}
+
+            {% if form.errors %}
+                <div class="error-messages">
+                    <ul>
+                        {% for field, errors in form.errors.items %}
+                            {% for error in errors %}
+                                <li>{{ field|title }}: {{ error }}</li>
+                            {% endfor %}
+                        {% endfor %}
+                    </ul>
+                </div>
+            {% endif %}
+
             <div class="input-group">
-                <input type="text" name="username" required placeholder=" ">
-                <label>Username</label>
-            </div>
-            <div class="input-group">
-                <input type="email" name="email" required placeholder=" ">
+                <input type="email" name="email" required placeholder=" "
+                       value="{{ form.email.value|default_if_none:'' }}">
                 <label>Email Address</label>
             </div>
             <div class="input-group">
@@ -46,6 +56,32 @@
             <button type="submit">Register</button>
             <p>Already have an account? <a href="{% url 'user:login_page' %}">Login</a></p>
         </form>
+        <div class="col-sm-6">
+            <a class="btn btn-outline-danger btn-lg d-flex align-items-center justify-content-center gap-2 shadow-sm"
+               href="{% url 'social:begin' 'google-oauth2' %}"
+               style="border-radius: 8px; font-weight: bold; transition: all 0.3s ease-in-out;">
+                <i class="fab fa-google"></i>
+                <span>Continue with Google</span>
+            </a>
+        </div>
+
+        <style>
+            .error-messages {
+                color: red;
+                background: #ffe5e5;
+                border: 1px solid red;
+                padding: 10px;
+                margin-bottom: 10px;
+                border-radius: 5px;
+            }
+
+            .error-messages ul {
+                margin: 0;
+                padding: 0;
+                list-style: none;
+            }
+        </style>
+
     </div>
 </div>
 

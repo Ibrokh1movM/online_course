@@ -4,6 +4,7 @@ from online_courses import views
 app_name = 'online_courses'
 urlpatterns = [
     path('index/', views.index, name='index'),
+    path("register/", views.register, name="register"),
     path('about/', views.about, name='about'),
     path('course/', views.course, name='course'),
     path('<int:course_id>/', views.course_detail, name='course_detail'),

@@ -59,20 +59,22 @@
                     <input type="password" name="password" required placeholder=" ">
                     <label>Password</label>
                 </div>
-                <div class="checkbox-group">
-                    <label><input type="checkbox" name="remember"> Remember me</label>
-                    <a href="{% url 'user:forgot_password' %}">Forgot Password?</a>
-                </div>
+{#                <div class="checkbox-group">#}
+{#                    <label><input type="checkbox" name="remember"> Remember me</label>#}
+{#                    <a href="{% url 'user:forgot_password' %}">Forgot Password?</a>#}
+{#                </div>#}
                 <button type="submit">Login</button>
                 <p>Don't have an account? <a href="{% url 'user:register_page' %}">Register</a></p>
             </form>
             <div class="col-sm-6">
-                <a class="btn btn-outline-google-plus btn-sm d-block w-100"
-                   href="{% url 'social:begin' 'google-oauth2' %}">
-                    <span class="fab fa-google-plus-g me-2" data-fa-transform="grow-8"></span>
-                    Google
+                <a class="btn btn-outline-danger btn-lg d-flex align-items-center justify-content-center gap-2 shadow-sm"
+                   href="{% url 'social:begin' 'google-oauth2' %}"
+                   style="border-radius: 8px; font-weight: bold; transition: all 0.3s ease-in-out;">
+                    <i class="fab fa-google"></i>
+                    <span>Continue with Google</span>
                 </a>
             </div>
+
         </div>
     </div>
 </div>
